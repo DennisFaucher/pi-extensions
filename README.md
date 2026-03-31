@@ -3,7 +3,8 @@
 
 I just started using [pi.dev](https://pi.dev/) as an alternative to OpenClaw.
 
-I have been getting help from Claude in writing the extensions for pi that will make my life easier
+I have been getting help from Claude in writing the extensions for pi that will make my life easier.
+These extensions should be saved to ~/.pi/agent/extensions/
 
 
 ### Running Everything Offline
