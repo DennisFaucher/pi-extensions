@@ -56,7 +56,7 @@ I have been getting help from Claude in writing the extensions for pi that will 
 
 [Extensions]                                                                                                                         
   user                                                                                                                               
-    ~/.pi/agent/extensions/accuweather.ts                                                                                            
+    ~/.pi/agent/extensions/pirateweather.ts                                                                                            
     ~/.pi/agent/extensions/logseq.ts                                                                                                 
     ~/.pi/agent/extensions/searxng.ts                                                                                                
     npm:pi-extension-manager                                                                                                         
