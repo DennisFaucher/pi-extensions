@@ -67,7 +67,7 @@ I have been getting help from Claude in writing the extensions for pi that will 
                                                                                                                                      
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────
 ~/Downloads
-0.0%/128k (auto)                                                                 (llama-cpp) MiniMax27B
+0.0%/128k (auto)                              (llama-cpp) MiniMax27B
 1 pkg · auto-update off
 
 ```
