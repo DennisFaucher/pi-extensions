@@ -74,3 +74,61 @@ These extensions should be saved to ~/.pi/agent/extensions/
 ```
 
 (Notice that llama-cpp is being used at the server and "MiniMax27B" as the model)
+
+### pi Prompt
+```
+ What is the weather in Boston, MA right now                                                                                         
+                                                                                                                                     
+
+ The user is asking for the current weather in Boston, MA. I should use the weather_forecast function with the location "Boston, MA" 
+ and type "current" to get the current weather conditions.                                                                           
+
+                                                                                                                                     
+ weather_forecast                                                                                                                    
+ Current conditions in Boston, Suffolk County, Massachusetts, United States:                                                         
+   Overcast                                                                                                                          
+   Temperature: 41°F (feels like 35°F)                                                                                               
+   Humidity: 91%                                                                                                                     
+   Wind: 8 mph NE, gusts 14 mph                                                                                                      
+   Cloud cover: 92%                                                                                                                  
+   UV Index: 0.11                                                                                                                    
+   Visibility: 10 km                                                                                                                 
+                                                                                                                                     
+
+ I got the current weather conditions for Boston, MA. Let me provide a clear summary to the user.                                    
+
+ Current weather in Boston, MA:                                                                                                      
+                                                                                                                                     
+ - Conditions: Overcast                                                                                                              
+ - Temperature: 41°F (feels like 35°F)                                                                                               
+ - Humidity: 91%                                                                                                                     
+ - Wind: 8 mph from the northeast, with gusts up to 14 mph                                                                           
+ - Cloud cover: 92%                                                                                                                  
+ - Visibility: 10 km                                                                                                                 
+ - UV Index: 0.11 (very low)                                                                                                         
+                                                                                                                                     
+ It's a cold and damp day with overcast skies and high humidity.
+```
+
+### llama-server Output
+```
+slot update_slots: id  3 | task 92 | new prompt, n_ctx_slot = 262144, n_keep = 0, task.n_tokens = 3158
+slot update_slots: id  3 | task 92 | n_past = 3046, slot.prompt.tokens.size() = 3059, seq_id = 3, pos_min = 3058, n_swa = 0
+slot update_slots: id  3 | task 92 | Checking checkpoint with [2967, 2967] against 3046...
+slot update_slots: id  3 | task 92 | restored context checkpoint (pos_min = 2967, pos_max = 2967, n_tokens = 2968, n_past = 2968, size = 149.626 MiB)
+slot update_slots: id  3 | task 92 | n_tokens = 2968, memory_seq_rm [2968, end)
+slot update_slots: id  3 | task 92 | prompt processing progress, n_tokens = 3154, batch.n_tokens = 186, progress = 0.998733
+slot update_slots: id  3 | task 92 | n_tokens = 3154, memory_seq_rm [3154, end)
+reasoning-budget: activated, budget=2147483647 tokens
+reasoning-budget: deactivated (natural end)
+slot init_sampler: id  3 | task 92 | init sampler, took 0.26 ms, tokens: text = 3158, total = 3158
+slot update_slots: id  3 | task 92 | prompt processing done, n_tokens = 3158, batch.n_tokens = 4
+slot update_slots: id  3 | task 92 | created context checkpoint 3 of 32 (pos_min = 3153, pos_max = 3153, n_tokens = 3154, size = 149.626 MiB)
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+slot print_timing: id  3 | task 92 | 
+prompt eval time =    1922.47 ms /   190 tokens (   10.12 ms per token,    98.83 tokens per second)
+       eval time =   11567.97 ms /   138 tokens (   83.83 ms per token,    11.93 tokens per second)
+      total time =   13490.45 ms /   328 tokens
+slot      release: id  3 | task 92 | stop processing: n_tokens = 3295, truncated = 0
+srv  update_slots: all slots are idle
+```
