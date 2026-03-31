@@ -10,7 +10,8 @@
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
 import { Type } from "@sinclair/typebox";
 
-const SEARXNG_BASE_URL = "https://searxng.faucher.live/search";
+// ** EDIT THE NEXT LINE FOR YOUR SEARXNG SERVER **
+const SEARXNG_BASE_URL = "https://your.server.here/search";
 
 // --- Types ---
 
