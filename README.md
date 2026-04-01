@@ -8,8 +8,11 @@ These extensions should be saved to ~/.pi/agent/extensions/
 
 ### To Install the Gmail Extension
 Copy the gmail folder to ~/.pi/agent/extensions/
+
 Run npm install in that folder to pull down imapflow
+
 Start pi or run /reload in pi
+
 Use /gmail-auth in pi.dev to authenticate
 
 ### Running Everything Offline
