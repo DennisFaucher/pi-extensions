@@ -1,0 +1,8 @@
+{
+  "name": "gmail-extension",
+  "version": "1.0.0",
+  "description": "Pi extension for reading Gmail emails",
+  "dependencies": {
+    "imapflow": "^1.2.18"
+  }
+}
