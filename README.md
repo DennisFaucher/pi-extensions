@@ -15,6 +15,72 @@ Start pi or run /reload in pi
 
 Use /gmail-auth in pi.dev to authenticate
 
+### Using the bejamas-ascii ASCII Art Extension
+#### bejamas-ascii
+
+A [pi.dev](https://pi.dev) agent extension that generates ASCII art from a text prompt using the [Bejamas AI ASCII Art Generator](https://bejamas.com/tools/ai-ascii-art-generator).
+
+##### Requirements
+
+- **pi.dev agent** with extension support
+- **Claude in Chrome** browser extension — the extension makes HTTP requests to `bejamas.com` from within the browser context, which requires the Claude in Chrome extension to be installed and active. No API key is needed.
+
+##### Installation
+
+Copy `bejamas-ascii.ts` into your pi extensions directory:
+
+```
+~/.pi/agent/extensions/bejamas-ascii.ts
+```
+
+Restart pi. The `bejamas_ascii_art` tool will be available immediately.
+
+##### Usage
+
+Ask pi to generate ASCII art in natural language:
+
+```
+Generate ASCII art of a cat
+Generate ASCII art of a spaceship in braille style
+Make me some ASCII art of a mountain, classic style
+```
+
+###### Parameters
+
+| Parameter | Required | Default    | Description |
+|-----------|----------|------------|-------------|
+| `prompt`  | yes      | —          | Description of what to generate |
+| `style`   | no       | `alphabet` | Rendering style (see below) |
+
+###### Available Styles
+
+| Style       | Description |
+|-------------|-------------|
+| `classic`   | Dense block characters |
+| `dots`      | Dot-matrix rendering |
+| `blocks`    | Block element characters |
+| `geometric` | Geometric shapes |
+| `simple`    | Minimal character set |
+| `box`       | Box-drawing characters |
+| `horizontal`| Horizontal line emphasis |
+| `vertical`  | Vertical line emphasis |
+| `braille`   | Braille unicode characters |
+| `boxDrawing`| Extended box-drawing characters |
+| `alphabet`  | Standard printable ASCII characters |
+
+##### How It Works
+
+The extension POSTs to `https://bejamas.com/api/create-ascii.data` with a form-encoded body containing the prompt and style. The response uses Remix's turbo-stream serialization format, which the extension parses to extract the generated art. All 11 style variants are returned in a single request; the extension surfaces the requested style and stores the rest in `details.allResults` for reference.
+
+No API key or account is required.
+
+##### Notes
+
+- The Bejamas API is a third-party service. Availability and response format may change without notice.
+- The output is best viewed in a monospace font. The pi TUI renders tool output in a fixed-width font by default.
+- Generation typically takes 5–15 seconds depending on prompt complexity.
+
+
 ### Running Everything Offline
 #### Run a local model
 `nohup llama-server -hf armand0e/Qwen3-27B-MiniMax-Coder-GGUF:Q4_K_M --alias MiniMax27B &`
