@@ -31,8 +31,8 @@ interface PushoverResponse {
 function getCredentials(): { token: string; userKey: string } | null {
 	// const token = process.env.PUSHOVER_API_TOKEN;
 	// const userKey = process.env.PUSHOVER_USER_KEY;
-	const token = "arqjxcsgua5ish2mabiwfkwysy3hbw";
-	const userKey = "uifkkm4pnjxc9ynevt6q5zi73fg1gw";
+	const token = "YourTokenGoesHere";
+	const userKey = "YourKeyGoesHere";
 	if (!token || !userKey) return null;
 	return { token, userKey };
 }
