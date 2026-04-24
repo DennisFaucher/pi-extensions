@@ -60,8 +60,8 @@ let cachedToken: { token: string; expiresAt: number } | null = null;
 async function getAccessToken(): Promise<string> {
 	// const clientId = process.env.USPS_CLIENT_ID;
 	// const clientSecret = process.env.USPS_CLIENT_SECRET;
-	const clientId = "McFW7muEfZn8yQaz2BDHEhqgFw331sTNGNiWPoIpo9LWBfjO";
-	const clientSecret = "qhhNx1EOrZM5NmYPh1KsIEl51yIh9TOYdHeRmekL7AGJZQ9iHSALbuUKKju03SoP";
+	const clientId = "YouIDGoesHere";
+	const clientSecret = "YourSecretGoesHere";
 
 	if (!clientId || !clientSecret) {
 		throw new Error("USPS_CLIENT_ID and USPS_CLIENT_SECRET environment variables are required.");
@@ -212,8 +212,8 @@ export default function uspsTrackingExtension(pi: ExtensionAPI) {
 		async execute(_toolCallId, params, _signal, _onUpdate, ctx) {
 			// const clientId = process.env.USPS_CLIENT_ID;
 			// const clientSecret = process.env.USPS_CLIENT_SECRET;
-	                const clientId = "McFW7muEfZn8yQaz2BDHEhqgFw331sTNGNiWPoIpo9LWBfjO";
-	                const clientSecret = "qhhNx1EOrZM5NmYPh1KsIEl51yIh9TOYdHeRmekL7AGJZQ9iHSALbuUKKju03SoP";
+	                const clientId = "YourIDGoesHere";
+	                const clientSecret = "YourSecretGoesHere";
 
 			if (!clientId || !clientSecret) {
 				return {
