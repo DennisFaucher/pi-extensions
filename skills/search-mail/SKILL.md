@@ -10,7 +10,7 @@ Search and retrieve emails stored as `.emlx` files in an Apple Mail V10 mailstor
 
 ## Invocation
 ```
-python3 /Users/faucherd/Documents/Resilio/MBP-Personal/Programming/Python/Search_Mac_Mail/search_mail.py [OPTIONS]
+python3 /your/path/to/python/script/search_mail.py [OPTIONS]
 ```
 
 All filters are optional and combinable. Results are sorted by date ascending.
@@ -50,21 +50,13 @@ All filters are optional and combinable. Results are sorted by date ascending.
 ## Available Mailboxes
 ```
 Archive.mbox
-Boxer.mbox
-Conduent DL.mbox
-Conversation History.mbox
 Deleted Items.mbox
 Drafts.mbox
 Inbox.mbox
 Journal.mbox
 Junk Email.mbox
-Notes.mbox
 Outbox.mbox
-RSS Subscriptions.mbox
 Sent Items.mbox
-Sync Issues.mbox
-Tasks.mbox
-WWT_Archive.mbox
 ```
 Use `--list-mailboxes` to get the current list at runtime.
 
@@ -79,7 +71,7 @@ Human-readable blocks separated by `===` dividers. Body is truncated to **500 ch
 Mailbox : Inbox.mbox
 Date    : 2026-05-20
 From    : Jane Smith <jane@example.com>
-To      : dennis.faucher@wwt.com
+To      : dennis.faucher@foobar.com
 Subject : Q2 Review
 File    : /path/to/message.emlx
 Body    : Please find attached...
@@ -97,7 +89,7 @@ Array of objects, one per message. Body is **full, untruncated**. Pipe stderr to
     "date_str": "2026-05-20",
     "subject": "Q2 Review",
     "from": "Jane Smith <jane@example.com>",
-    "to": "dennis.faucher@wwt.com",
+    "to": "dennis.faucher@foobar.com",
     "body": "Please find attached..."
   }
 ]
@@ -133,7 +125,7 @@ python3 search_mail.py --mailbox Inbox.mbox --from nvidia --output json 2>/dev/n
 python3 search_mail.py --mailbox Inbox.mbox "Sent Items.mbox" --startdate 2026-05-01
 
 # Wildcard mailbox selection
-python3 search_mail.py --mailbox "WWT*" --subject "*renewal*"
+python3 search_mail.py --mailbox "foobar*" --subject "*renewal*"
 ```
 
 ---
