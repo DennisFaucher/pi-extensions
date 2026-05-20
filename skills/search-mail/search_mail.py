@@ -14,7 +14,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
-BASE_DIR = Path("/Users/faucherd/Library/Mail/V10/41B5EF7D-E111-428A-B436-FCC0771919CA")
+BASE_DIR = Path("/Users/[userid]/Library/Mail/V10/[long-string]")
 
 
 def parse_date_arg(value: str) -> date:
